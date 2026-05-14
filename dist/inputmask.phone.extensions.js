@@ -6,8 +6,12 @@
  * Version: 1.0.6-beta.0
  */
 !function(e, r) {
-    if ("object" == typeof exports && "object" == typeof module) module.exports = r(require("Inputmask")); else if ("function" == typeof define && define.amd) define([ "Inputmask" ], r); else {
-        var t = "object" == typeof exports ? r(require("Inputmask")) : r(e.Inputmask);
+    if (typeof define === "function" && define.amd) {
+        define([ "inputmask" ], r);
+    } else if (typeof exports === "object") {
+        module.exports = r(require("inputmask"));
+    } else {
+        var t = "object" == typeof exports ? r(require("inputmask")) : r(e.inputmask);
         for (var o in t) ("object" == typeof exports ? exports : e)[o] = t[o];
     }
 }(self, (function(e) {
@@ -73,7 +77,8 @@
                     inputmode: "tel"
                 }
             });
-        })(), {};
+            return r.default;
+        })();
     })();
 }));
 //# sourceMappingURL=inputmask.phone.extensions.js.map
